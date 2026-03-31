@@ -47,21 +47,51 @@ The platform is designed to provide a seamless digital learning experience by of
 ## 📂 Project Structure
 
 ```
-BrainBox/
+brainbox/
 │
-├── client/            # Frontend (React)
-│   ├── src/
-│   └── public/
+├── index.html                 # Landing page
+├── login.html                 # Login page
+├── register.html              # Signup page
+├── dashboard.html             # User dashboard
+├── course.html                # Course listing
+├── video.html                 # Video player page
+├── quiz.html                  # Quiz interface
+├── leaderboard.html           # Leaderboard page
+├── profile.html               # User profile
 │
-├── server/            # Backend (Node.js + Express)
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   ├── middleware/
-│   └── config/
+├── assets/                    # Static files
+│   ├── images/                # logos, thumbnails
+│   ├── icons/                 # svg/icons
+│   └── videos/                # demo videos (optional)
 │
-├── .env
-├── package.json
+├── css/                       # Stylesheets
+│   ├── style.css              # Global styles
+│   ├── auth.css               # Login/Register styles
+│   ├── dashboard.css          # Dashboard UI
+│   ├── course.css             # Course page
+│   ├── quiz.css               # Quiz styling
+│   ├── leaderboard.css        # Leaderboard UI
+│   └── responsive.css         # Mobile responsive design
+│
+├── js/                        # JavaScript files
+│   ├── main.js                # Global scripts
+│   ├── auth.js                # Login/Register logic
+│   ├── dashboard.js           # Dashboard logic
+│   ├── course.js              # Course handling
+│   ├── video.js               # Video player logic
+│   ├── quiz.js                # Quiz system (IMPORTANT)
+│   ├── leaderboard.js         # Ranking logic
+│   ├── profile.js             # Profile management
+│   └── api.js                 # API calls (backend connection)
+│
+├── data/                      # Dummy JSON (for testing)
+│   ├── courses.json
+│   ├── quiz.json
+│   └── users.json
+│
+├── backend/ (optional later)  # If you add Node.js
+│
+├── .env                       # API keys (if used)
 └── README.md
 ```
 
