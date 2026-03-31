@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBox | Interactive E-Learning & Gamification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden hero-gradient">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="bg-indigo-600 p-2 rounded-lg">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-800 tracking-tight text-slate-900">Brain<span class="text-indigo-600">Box</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-indigo-600 font-medium transition">Features</a>
+                    <a href="#courses" class="text-slate-600 hover:text-indigo-600 font-medium transition">Courses</a>
+                    <a href="#leaderboard" class="text-slate-600 hover:text-indigo-600 font-medium transition">Leaderboard</a>
+                    <div class="flex items-center space-x-4 border-l pl-8 border-slate-200">
+                        <a href="login.html" class="text-slate-700 hover:text-indigo-600 font-semibold">Login</a>
+                        <a href="register.html" class="bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white mobile-menu hidden-menu md:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-bold text-slate-900">BrainBox</span>
+                <button id="close-btn" class="text-slate-600">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 text-xl">
+                <a href="#features" class="mobile-link">Features</a>
+                <a href="#courses" class="mobile-link">Courses</a>
+                <a href="#leaderboard" class="mobile-link">Leaderboard</a>
+                <hr class="border-slate-100">
+                <a href="login.html" class="text-indigo-600 font-semibold">Login</a>
+                <a href="register.html" class="bg-indigo-600 text-white text-center py-4 rounded-xl font-bold shadow-xl shadow-indigo-100">Sign Up Free</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-bold border border-indigo-100">
+                    <span class="flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                    <span>Revolutionizing Online Learning</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-800 leading-tight text-slate-900">
+                    Learn by <span class="text-indigo-600">Doing.</span> <br>
+                    Win by <span class="text-purple-600">Playing.</span>
+                </h1>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-xl">
+                    Stop passive scrolling. BrainBox combines interactive video lessons with real-time quizzes and global leaderboards to make learning addictive.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <a href="register.html" class="w-full sm:w-auto bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all hover:scale-105 shadow-2xl shadow-indigo-200 text-center">
+                        Start Learning Free
+                    </a>
+                    <a href="#how-it-works" class="w-full sm:w-auto flex items-center justify-center space-x-3 text-slate-700 font-bold px-10 py-4 rounded-2xl hover:bg-white transition border border-transparent hover:border-slate-200">
+                        <div class="bg-white p-2 rounded-full shadow-sm">
+                            <i class="fas fa-play text-indigo-600"></i>
+                        </div>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
+                <div class="flex items-center justify-center md:justify-start space-x-4 text-slate-400">
+                    <div class="flex -space-x-3">
+                        <img src="https://ui-avatars.com/api/?name=JD&background=6366f1&color=fff" class="w-10 h-10 rounded-full border-2 border-white" alt="user">
+                        <img src="https://ui-avatars.com/api/?name=AS&background=a855f7&color=fff" class="w-10 h-10 rounded-full border-2 border-white" alt="user">
+                        <img src="https://ui-avatars.com/api/?name=MK&background=22c55e&color=fff" class="w-10 h-10 rounded-full border-2 border-white" alt="user">
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-500">+2k</div>
+                    </div>
+                    <span class="text-sm font-medium">Join 2,000+ active learners this week</span>
+                </div>
+            </div>
+            
+            <!-- Hero Illustration/Visual -->
+            <div class="md:w-1/2 relative">
+                <div class="absolute -top-10 -left-10 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div class="absolute top-0 -right-4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+                
+                <div class="relative bg-white p-4 rounded-[2.5rem] shadow-2xl border border-slate-100">
+                    <div class="bg-slate-900 rounded-[2rem] overflow-hidden aspect-video flex items-center justify-center text-white relative">
+                         <!-- Mock Video UI -->
+                         <div class="text-center p-6">
+                            <i class="fas fa-play-circle text-7xl text-indigo-500 mb-4 opacity-80"></i>
+                            <p class="text-lg font-medium">Interactive JS Tutorial</p>
+                         </div>
+                         <!-- Overlay Quiz Mockup -->
+                         <div class="absolute bottom-4 right-4 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-200 w-64 animate-bounce hover:pause">
+                            <p class="text-xs font-bold text-indigo-600 mb-1 uppercase tracking-widest">Question #4</p>
+                            <p class="text-sm font-bold leading-tight">What does DOM stand for?</p>
+                            <div class="mt-2 space-y-1">
+                                <div class="text-[10px] bg-indigo-50 p-1.5 rounded-lg border border-indigo-100">Document Object Model</div>
+                                <div class="text-[10px] bg-slate-50 p-1.5 rounded-lg">Data Online Management</div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <h3 class="text-4xl font-800 text-slate-900">95%</h3>
+                <p class="text-slate-500 font-medium">Knowledge Retention</p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-4xl font-800 text-slate-900">150+</h3>
+                <p class="text-slate-500 font-medium">Active Courses</p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-4xl font-800 text-slate-900">12k</h3>
+                <p class="text-slate-500 font-medium">Daily Quizzes</p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-4xl font-800 text-slate-900">4.9/5</h3>
+                <p class="text-slate-500 font-medium">User Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-indigo-600 font-bold tracking-widest uppercase text-sm mb-4">Core Principles</h2>
+            <h3 class="text-4xl md:text-5xl font-800 text-slate-900 mb-6">Designed for Active Learning</h3>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto">Traditional learning is broken. BrainBox fixes it by turning study sessions into interactive adventures.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-hover border border-slate-100">
+                <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl mb-8">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-4">Smart Video Player</h4>
+                <p class="text-slate-600 leading-relaxed">Videos that stop and ask you questions. Ensure you've mastered a concept before moving to the next segment.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-hover border border-slate-100">
+                <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-8">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-4">Gamified Pathways</h4>
+                <p class="text-slate-600 leading-relaxed">Earn XP, unlock badges, and level up your skills. Competitions and daily streaks keep the momentum going.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-hover border border-slate-100">
+                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-8">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-4">Personalized Insights</h4>
+                <p class="text-slate-600 leading-relaxed">Deep analytics show exactly where you struggle. Get custom review sessions to strengthen weak points.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-indigo-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-indigo-300">
+                <div class="absolute top-0 right-0 p-12 opacity-10">
+                    <i class="fas fa-brain text-[200px]"></i>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-800 mb-8 leading-tight">Ready to start your <br>learning journey?</h2>
+                <p class="text-xl text-indigo-100 mb-12 max-w-2xl mx-auto">Join thousands of students who are learning faster and better with BrainBox's interactive system.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="register.html" class="bg-white text-indigo-600 px-12 py-5 rounded-2xl font-bold text-xl hover:bg-slate-50 transition shadow-xl">Create Free Account</a>
+                    <a href="course.html" class="border border-indigo-400 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-indigo-500 transition">Browse Courses</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="bg-indigo-600 p-1.5 rounded-lg">
+                        <i class="fas fa-brain text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">BrainBox</span>
+                </div>
+                <p class="text-slate-500 leading-relaxed mb-6">The future of interactive learning is here. Engage, learn, and grow.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-slate-400 hover:text-indigo-600 transition text-xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-600 transition text-xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-600 transition text-xl"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h5 class="font-bold mb-6">Platform</h5>
+                <ul class="space-y-4 text-slate-500">
+                    <li><a href="#" class="hover:text-indigo-600 transition">All Courses</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Pricing</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Certificates</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Success Stories</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="font-bold mb-6">Support</h5>
+                <ul class="space-y-4 text-slate-500">
+                    <li><a href="#" class="hover:text-indigo-600 transition">Help Center</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-indigo-600 transition">Cookie Settings</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="font-bold mb-6">Subscribe</h5>
+                <p class="text-slate-500 mb-4">Get the latest course updates and educational tips.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Email address" class="bg-slate-50 border border-slate-200 px-4 py-3 rounded-l-xl w-full focus:outline-none focus:border-indigo-600">
+                    <button class="bg-indigo-600 text-white px-6 rounded-r-xl hover:bg-indigo-700 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
+            &copy; 2024 BrainBox E-Learning System. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden-menu');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Simple Greeting in Console
+        console.log("Welcome to BrainBox: Engaging E-Learning System");
+    </script>
+</body>
+</html>

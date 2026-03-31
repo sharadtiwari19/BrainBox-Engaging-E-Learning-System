@@ -1,0 +1,62 @@
+[
+{
+"id": "user_001",
+"name": "John Doe",
+"email": "john@example.com",
+"handle": "johndoe_dev",
+"xp": 12450,
+"level": 12,
+"joined": "March 2024",
+"avatar": "6366f1",
+"enrolledCourses": [1, 3],
+"achievements": ["Hot Streak", "Code Ninja", "Quick Thinker"]
+},
+{
+"id": "user_002",
+"name": "Alex K",
+"email": "alex@example.com",
+"handle": "alex_dev",
+"xp": 14200,
+"level": 30,
+"joined": "January 2024",
+"avatar": "a855f7",
+"enrolledCourses": [1, 2, 6],
+"achievements": ["Top Learner", "JS Architect"]
+},
+{
+"id": "user_003",
+"name": "Maria G",
+"email": "maria@example.com",
+"handle": "maria_ux",
+"xp": 13800,
+"level": 28,
+"joined": "February 2024",
+"avatar": "22c55e",
+"enrolledCourses": [2, 4],
+"achievements": ["Design Master"]
+},
+{
+"id": "user_004",
+"name": "Ben H",
+"email": "ben@example.com",
+"handle": "ben_codes",
+"xp": 13100,
+"level": 25,
+"joined": "March 2024",
+"avatar": "6366f1",
+"enrolledCourses": [1, 6],
+"achievements": ["Fast Learner"]
+},
+{
+"id": "user_005",
+"name": "Sarah Lane",
+"email": "sarah@example.com",
+"handle": "sarah_l",
+"xp": 12100,
+"level": 28,
+"joined": "December 2023",
+"avatar": "f43f5e",
+"enrolledCourses": [2, 5],
+"achievements": ["Consistency King"]
+}
+]

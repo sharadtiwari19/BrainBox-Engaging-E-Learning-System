@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q1",
+    "courseId": 1,
+    "topic": "JavaScript ES6",
+    "question": "Which of the following is the correct way to declare a constant in ES6?",
+    "options": [
+      "var x = 10;",
+      "let x = 10;",
+      "const x = 10;",
+      "constant x = 10;"
+    ],
+    "correct": 2,
+    "xp": 50,
+    "hint": "Constants cannot be reassigned after their initial declaration."
+  },
+  {
+    "id": "q2",
+    "courseId": 1,
+    "topic": "JavaScript ES6",
+    "question": "What is the output of: console.log(typeof (() => {}));",
+    "options": [
+      "object",
+      "function",
+      "undefined",
+      "arrow"
+    ],
+    "correct": 1,
+    "xp": 50,
+    "hint": "Arrow functions are a specialized syntax for function expressions."
+  },
+  {
+    "id": "q3",
+    "courseId": 2,
+    "topic": "UI/UX Design",
+    "question": "In UI design, what does 'White Space' primarily help with?",
+    "options": [
+      "Increasing file size",
+      "Reducing development time",
+      "Improving legibility and focus",
+      "Adding more content to a page"
+    ],
+    "correct": 2,
+    "xp": 50,
+    "hint": "Think about how much easier it is to read text when it isn't cramped."
+  },
+  {
+    "id": "q4",
+    "courseId": 3,
+    "topic": "Python Data Science",
+    "question": "Which Python library is primarily used for data manipulation and analysis?",
+    "options": [
+      "TensorFlow",
+      "Pandas",
+      "Flask",
+      "PyGame"
+    ],
+    "correct": 1,
+    "xp": 50,
+    "hint": "This library provides the Dataframe object."
+  },
+  {
+    "id": "q5",
+    "courseId": 6,
+    "topic": "Node.js Backend",
+    "question": "Which command is used to initialize a new Node.js project and create a package.json file?",
+    "options": [
+      "node start",
+      "npm init",
+      "npm install",
+      "node init"
+    ],
+    "correct": 1,
+    "xp": 50,
+    "hint": "NPM is the Node Package Manager."
+  },
+  {
+    "id": "q6",
+    "courseId": 4,
+    "topic": "Digital Marketing",
+    "question": "What does SEO stand for in the context of Digital Marketing?",
+    "options": [
+      "Social Engagement Optimization",
+      "Search Engine Optimization",
+      "System Error Oversight",
+      "Secure Entrance Online"
+    ],
+    "correct": 1,
+    "xp": 50,
+    "hint": "It relates to how your website ranks on Google."
+  },
+  {
+    "id": "q7",
+    "courseId": 5,
+    "topic": "Business Analysis",
+    "question": "In a startup context, what does 'Runway' refer to?",
+    "options": [
+      "The physical length of an office",
+      "The time until a company runs out of cash",
+      "The speed at which a product is developed",
+      "A marketing channel for fashion brands"
+    ],
+    "correct": 1,
+    "xp": 50,
+    "hint": "It's a measurement of financial survival time."
+  }
+]

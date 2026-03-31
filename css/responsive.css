@@ -1,0 +1,164 @@
+/* BrainBox Responsive Styles
+   Project: Engaging E-Learning System
+   This file handles global responsive overrides and fine-tuning 
+   for common elements across all pages.
+*/
+
+/* --- 1. Global Spacing & Typography Adjustments --- */
+@media (max-width: 768px) {
+    :root {
+        --radius-xl: 1.5rem; /* Slightly smaller corners on mobile */
+    }
+
+    h1 { font-size: 2.25rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    h3 { font-size: 1.5rem !important; }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Reduce vertical padding for sections on mobile */
+    section, header {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+/* --- 2. Navigation & Layout Overrides --- */
+@media (max-width: 1024px) {
+    /* Handle sidebar visibility transitions more smoothly */
+    #sidebar {
+        box-shadow: 20px 0 50px rgba(0,0,0,0.1);
+    }
+
+    /* Ensure main content doesn't scroll horizontally when sidebar is open */
+    body.overflow-hidden {
+        position: fixed;
+        width: 100%;
+    }
+}
+
+/* --- 3. Grid Adjustments --- */
+/* Small Mobile Tweaks */
+@media (max-width: 480px) {
+    .stats-grid, .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .stat-card {
+        padding: 1.25rem !important;
+    }
+
+    /* Buttons full width on small screens */
+    .btn-primary, .btn-outline, .btn-social {
+        width: 100%;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* --- 4. Component-Specific Responsive Overrides --- */
+
+/* Course Cards in Library */
+@media (max-width: 640px) {
+    .course-card .course-thumbnail {
+        height: 160px;
+    }
+    
+    .course-info {
+        padding: 1rem !important;
+    }
+}
+
+/* Video Player UI */
+@media (max-width: 1280px) {
+    /* Stack the curriculum below the video on tablets/laptops */
+    .video-curriculum-wrapper {
+        flex-direction: column;
+    }
+
+    .video-main-area {
+        width: 100%;
+        border-right: none;
+    }
+
+    .curriculum-sidebar {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 400px;
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+/* Quiz UI Timer */
+@media (max-width: 640px) {
+    .quiz-header-info {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .timer-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .timer-text {
+        font-size: 1.25rem;
+    }
+    
+    .question-card {
+        padding: 1.5rem !important;
+    }
+    
+    .question-text {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Leaderboard Podium Styling */
+@media (max-width: 768px) {
+    .podium-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .podium-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .podium-pillar {
+        height: 80px !important; /* Flattened pillars for mobile stack */
+        border-radius: var(--radius-md);
+    }
+    
+    .rank-1 .podium-pillar { order: 1; }
+    .rank-2 .podium-pillar { order: 2; }
+    .rank-3 .podium-pillar { order: 3; }
+}
+
+/* Profile Activity Chart */
+@media (max-width: 640px) {
+    .activity-chart-container {
+        overflow-x: auto;
+    }
+    
+    .chart-bars {
+        min-width: 400px; /* Force scroll on very small screens */
+    }
+}
+
+/* --- 5. Utility Helpers --- */
+.hide-mobile {
+    @media (max-width: 640px) { display: none !important; }
+}
+
+.show-mobile {
+    @media (min-width: 641px) { display: none !important; }
+}
